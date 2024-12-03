@@ -1,6 +1,6 @@
 function part1() {
   const fs = require("fs");
-  const input = fs.readFileSync("inputTest.txt", "utf-8");
+  const input = fs.readFileSync("input.txt", "utf-8");
 
   const resultArr = input.match(/mul\(\d+,\d+\)/g);
 
@@ -10,10 +10,13 @@ function part1() {
 }
 
 function processCals(array) {
+  let result = 0;
   array.forEach((numbers) => {
     let numberArr = numbers.match(/\d+/g);
-    console.log(numberArr);
+    result += numberArr[0] * numberArr[1];
   });
+
+  return result;
 }
 
 part1();
