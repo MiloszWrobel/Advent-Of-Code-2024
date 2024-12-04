@@ -6,7 +6,6 @@ function part1() {
     .split("\n")
     .map((line) => line.trim());
   let counter = 0;
-  const singleString = lines.join("");
 
   //const match = input.match(/XMAS/g);
 
