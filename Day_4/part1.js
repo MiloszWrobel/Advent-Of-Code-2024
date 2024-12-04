@@ -8,13 +8,15 @@ function part1() {
     .split("\n")
     .map((line) => line.trim());
 
-  const singleString = lines.join("");
-
   // Check for how many XMAS there are
-  counter += (singleString.match(/XMAS/g) || []).length;
+  lines.forEach((line) => {
+    counter += line.match(/XMAS/g).length;
+  });
 
   // Check for how many backwards XMAS there are
-  counter += (singleString.match(/SAMX/g) || []).length;
+  lines.forEach((line) => {
+    counter += line.match(/SAMX/g).length;
+  });
 
   // Check for top to down XMAS
   for (let i = 0; i < lines.length - 3; i++) {
